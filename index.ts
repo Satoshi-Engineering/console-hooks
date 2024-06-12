@@ -1,1 +1,1 @@
-export default './src/consoleOverride.js'
+export default 'src/consoleOverride.js'
