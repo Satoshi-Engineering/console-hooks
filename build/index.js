@@ -1,1 +1,2 @@
-export default 'src/consoleOverride.js';
+import consoleOverride from 'src/consoleOverride.js';
+export default consoleOverride;

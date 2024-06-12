@@ -1,2 +1,2 @@
-declare const _default: "src/consoleOverride.js";
-export default _default;
+import consoleOverride from 'src/consoleOverride.js';
+export default consoleOverride;
