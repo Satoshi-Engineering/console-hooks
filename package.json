@@ -10,11 +10,14 @@
     "build"
   ],
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.14.2",
+    "ts-jest": "^29.1.4",
+    "tsx": "^4.15.4",
     "typescript": "^5.4.5"
   },
   "scripts": {
     "build": "npx tsc",
-    "watch": "tsc -w"
+    "test": "export NODE_OPTIONS='--experimental-vm-modules' && jest --config ./jest.config.js ./test"
   }
 }

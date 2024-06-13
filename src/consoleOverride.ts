@@ -12,7 +12,10 @@ function appendTime(args: Array<unknown>) {
   return [`[${time}]`, ...args]
 }
 
-export default ({ onErrorMessage }: { onErrorMessage: (message: string) => Promise<void> }) => {
+export default (
+  { onErrorMessage = async (_: string) => undefined }:
+    { onErrorMessage?: (message: string) => Promise<void> } = {},
+) => {
   // Save the original console functions
   const origDebug = console.debug
   const origLog = console.log
