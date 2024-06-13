@@ -1,13 +1,11 @@
 {
-  "exclude": ["node_modules", "build"],
+  "exclude": ["node_modules", "build", "test"],
   "compilerOptions": {
     "lib": ["ES2022"],
-    "module": "ES2022",
     "target": "ES2022",
     "types": ["node", "jest"],
     "declaration": true,
     "moduleDetection": "force",
-    "outDir": "build",
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,

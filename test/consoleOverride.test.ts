@@ -11,7 +11,11 @@ describe('Console helper which overides the default console functions', () => {
     let stdoutLines: Array<string> = []
     let stderrLines: Array<string> = []
 
-    const directory = dirname(fileURLToPath(import.meta.url))
+
+    const filename = fileURLToPath(import.meta.url)
+    // const filename = __filename
+    const directory = dirname(filename)
+
     const testAppFilePath = `${directory}/consoleOverride.file.ts`
 
     // Run the script

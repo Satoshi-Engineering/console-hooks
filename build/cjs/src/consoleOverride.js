@@ -1,5 +1,10 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable no-console */
-import util from 'node:util';
+const node_util_1 = __importDefault(require("node:util"));
 function appendTime(args) {
     const timezoneOffset = (new Date()).getTimezoneOffset() * 60000;
     const time = (new Date(Date.now() - timezoneOffset)).toISOString().replace(/T/, ' ').replace(/\..+/, '');
@@ -8,7 +13,7 @@ function appendTime(args) {
     }
     return [`[${time}]`, ...args];
 }
-export default ({ onErrorMessage }) => {
+exports.default = ({ onErrorMessage = async (_) => undefined } = {}) => {
     // Save the original console functions
     const origDebug = console.debug;
     const origLog = console.log;
@@ -41,7 +46,7 @@ export default ({ onErrorMessage }) => {
                 return value;
             }
             try {
-                return util.inspect(value);
+                return node_util_1.default.inspect(value);
             }
             catch (error) {
                 return 'consoleOverride: Unable to util.inspect value, check error logs';

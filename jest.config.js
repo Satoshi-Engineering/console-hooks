@@ -1,4 +1,4 @@
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+/** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
 export default {
   testEnvironment: 'node',
   preset: 'ts-jest/presets/default-esm', // for ESM support
