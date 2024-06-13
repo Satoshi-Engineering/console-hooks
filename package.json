@@ -10,11 +10,12 @@
     "build"
   ],
   "scripts": {
-    "build": "npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json",
+    "build": "npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
     "test": "export NODE_OPTIONS='--experimental-vm-modules' && jest --config ./jest.config.js ./test"
   },
   "exports": {
     "./*": {
+      "types": "./build/types/*.d.ts",
       "require": "./build/cjs/*.js",
       "import": "./build/esm/*.js",
       "default": "./build/esm/*.js"
