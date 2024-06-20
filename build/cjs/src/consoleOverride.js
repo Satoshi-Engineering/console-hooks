@@ -13,46 +13,56 @@ function appendTime(args) {
     }
     return [`[${time}]`, ...args];
 }
-exports.default = ({ onErrorMessage = async (_) => undefined } = {}) => {
+exports.default = ({ onDebug = async (_) => undefined, onLog = async (_) => undefined, onInfo = async (_) => undefined, onWarn = async (_) => undefined, onError = async (_) => undefined, } = {}) => {
     // Save the original console functions
     const origDebug = console.debug;
     const origLog = console.log;
     const origInfo = console.info;
     const origWarn = console.warn;
     const origError = console.error;
-    console.debug = (...args) => {
+    console.debug = async (...args) => {
         const argsWithTime = appendTime(args);
         origDebug(...argsWithTime);
+        const message = convertArgsToString(argsWithTime);
+        await onDebug(message);
     };
-    console.log = (...args) => {
+    console.log = async (...args) => {
         const argsWithTime = appendTime(args);
         origLog(...argsWithTime);
+        const message = convertArgsToString(argsWithTime);
+        await onLog(message);
     };
-    console.info = (...args) => {
+    console.info = async (...args) => {
         const argsWithTime = appendTime(args);
         origInfo(...argsWithTime);
+        const message = convertArgsToString(argsWithTime);
+        await onInfo(message);
     };
-    console.warn = (...args) => {
+    console.warn = async (...args) => {
         const argsWithTime = appendTime(args);
         origWarn(...argsWithTime);
+        const message = convertArgsToString(argsWithTime);
+        await onWarn(message);
     };
     console.error = async (...args) => {
         const argsWithTime = appendTime(args);
         origError(...argsWithTime);
-        // Send Error Message to telegram
-        const message = args
-            .map((value) => {
-            if (typeof value === 'string') {
-                return value;
-            }
-            try {
-                return node_util_1.default.inspect(value);
-            }
-            catch (error) {
-                return 'consoleOverride: Unable to util.inspect value, check error logs';
-            }
-        })
-            .join('\n');
-        await onErrorMessage(message);
+        const message = convertArgsToString(argsWithTime);
+        await onError(message);
     };
+};
+const convertArgsToString = (args) => {
+    return args
+        .map((value) => {
+        if (typeof value === 'string') {
+            return value;
+        }
+        try {
+            return node_util_1.default.inspect(value);
+        }
+        catch (error) {
+            return 'consoleOverride: Unable to util.inspect value, check error logs';
+        }
+    })
+        .join('\n');
 };
