@@ -10,7 +10,7 @@ npm i console-hooks
 ### Example usage
 
 This example uses [TelegramSender](https://github.com/Satoshi-Engineering/telegram-sender).
-Install with `npm i https://github.com/Satoshi-Engineering/telegram-sender`
+Install with `npm i telegram-sender`
 
 
 ```typescript
