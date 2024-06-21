@@ -83,7 +83,7 @@ const convertArgsToString = (args: Array<unknown>) => {
       try {
         return util.inspect(value)
       } catch (error) {
-        return 'consoleOverride: Unable to util.inspect value, check error logs'
+        return 'console-hooks: Unable to util.inspect value, check error logs'
       }
     })
     .join('\n')
