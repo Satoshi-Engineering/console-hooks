@@ -16,7 +16,7 @@ describe('Console helper which overides the default console functions', () => {
     // const filename = __filename
     const directory = dirname(filename)
 
-    const testAppFilePath = `${directory}/consoleOverride.file.ts`
+    const testAppFilePath = `${directory}/consoleHooks.file.ts`
 
     // Run the script
     const app = spawn('npx', ['tsx', testAppFilePath])

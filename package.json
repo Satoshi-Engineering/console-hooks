@@ -1,7 +1,11 @@
 {
-  "name": "console-override",
-  "version": "0.0.1",
+  "name": "console-hooks",
+  "version": "0.0.3",
   "author": "satoshi-engineering",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/satoshi-engineering/console-hooks.git"
+},
   "type": "module",
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",

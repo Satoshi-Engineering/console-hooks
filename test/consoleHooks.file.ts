@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import consoleOverride from '../src/consoleOverride'
+import consoleHooks from '../src/consoleHooks'
 
-consoleOverride()
+consoleHooks()
 
 console.debug('Foo', 'Debug')
 console.log('Foo', 'Log')

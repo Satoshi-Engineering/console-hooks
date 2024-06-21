@@ -1,10 +1,10 @@
-# consoleOverride
+# consoleHooks
 
 A simple helper script that modifies `console.debug`, `console.log`, `console.info`, `console.warn` and `console.error`.
 
 ### Installation
 ```bash
-npm i https://github.com/Satoshi-Engineering/console-override
+npm i console-hooks
 ```
 
 ### Example usage
@@ -14,7 +14,7 @@ Install with `npm i https://github.com/Satoshi-Engineering/telegram-sender`
 
 
 ```typescript
-import consoleOverride from 'console-override'
+import consoleHooks from 'console-hooks'
 import TelegramSender from 'telegram-sender'
 
 const telegramSender = new TelegramSender({
@@ -23,7 +23,7 @@ const telegramSender = new TelegramSender({
   messagePrefix: 'Website backend error'
 })
 
-consoleOverride({
+consoleHooks({
   onError: async (message) => {
     await telegramSender.sendMessage({ message })
   }

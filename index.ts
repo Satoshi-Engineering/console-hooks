@@ -1,3 +1,3 @@
-import consoleOverride from './src/consoleOverride'
+import consoleHooks from './src/consoleHooks'
 
-export default consoleOverride
+export default consoleHooks
