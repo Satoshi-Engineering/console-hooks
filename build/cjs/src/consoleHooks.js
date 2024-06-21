@@ -61,7 +61,7 @@ const convertArgsToString = (args) => {
             return node_util_1.default.inspect(value);
         }
         catch (error) {
-            return 'consoleOverride: Unable to util.inspect value, check error logs';
+            return 'console-hooks: Unable to util.inspect value, check error logs';
         }
     })
         .join('\n');
