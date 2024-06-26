@@ -40,10 +40,16 @@ consoleHooks({
 })
 
 // In your code somewhere else:
-console.error(new Error('Something bad happened'))
+console.error('Something bad happened')
+
+
+// You will receive a Telegram message similar to this:
+[Website backend error]
+[2024-06-26 15:26:12] Something bad happened
 
 ```
 
 ## Tip Us
 
-If you like this project, give it a star! If you love it, fork it and take it out for dinner. 🌟🍽️ And hey, why not [send some tip love?](https://satoshiengineering.com/tipjar/)
+If you like this project, give it a star! If you love it, fork it and take it out for dinner. 🌟🍽️  
+And hey, why not [send some tip love?](https://satoshiengineering.com/tipjar/)
