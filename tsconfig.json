@@ -4,6 +4,8 @@
     "lib": ["ES2022"],
     "target": "ES2022",
     "types": ["node", "jest"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "declaration": true,
     "moduleDetection": "force",
     "forceConsistentCasingInFileNames": true,
