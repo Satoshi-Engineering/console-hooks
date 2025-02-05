@@ -1,7 +1,11 @@
 {
   "name": "console-hooks",
   "version": "1.0.1",
-  "author": "satoshi-engineering",
+  "license": "MIT",
+  "author": {
+    "name": "Satoshi Engineering",
+    "email": "hello@satoshiengineering.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/satoshi-engineering/console-hooks.git"
